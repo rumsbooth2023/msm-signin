@@ -15,14 +15,16 @@
     </h2>
 
     <form action="/insert_bookmark" method="post">
-    <select>
+    <select name="query_movie_id">
     <% Movie.all.order(:title).each do |a_movie| %>
-    <option> <%= a_movie.title %></option>
+    <option value="<%= a_movie.id %>"> 
+      <%= a_movie.title %>
+    </option>
     <% end %>
     </select>
 
       <button>
-        Create bookmark
+        Bookmark this movie
       </button>
     </form>
   </div>
@@ -48,7 +50,7 @@
       <% @list_of_bookmarks.each do |a_bookmark| %>
       <tr>
         <td>
-          <%= a_bookmark.movie_id %>
+          <%= a_bookmark.movie.title %>
         </td>
 
         <td>
