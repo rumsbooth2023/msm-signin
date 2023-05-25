@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get("/", { :controller => "user_authentication", :action => "index" })
   # Routes for the Bookmark resource:
 
   # CREATE
