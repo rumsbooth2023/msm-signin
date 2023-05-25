@@ -1,15 +1,12 @@
 # == Schema Information
 #
-# Table name: directors
+# Table name: bookmarks
 #
 #  id         :integer          not null, primary key
-#  bio        :text
-#  dob        :date
-#  image      :string
-#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  movie_id   :integer
+#  user_id    :integer
 #
-class Director < ApplicationRecord
-  has_many :filmography
+class Bookmark < ApplicationRecord
 end
